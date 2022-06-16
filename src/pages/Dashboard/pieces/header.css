@@ -1,0 +1,26 @@
+header {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 16px 24px;
+    /* padding: 16px 24px; */
+    display: flex;
+    align-items: center;
+    
+}
+
+.logo {
+    /* padding: 16px; */
+    margin: 0;
+    margin-right: auto;
+    font-size: 1.4rem;
+}
+
+@media (min-width: 1024px) {
+    .logo {
+        font-size: 1.7rem;
+    }
+
+    .hamburger-react {
+        display: none;
+    }
+}

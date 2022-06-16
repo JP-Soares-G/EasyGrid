@@ -1,0 +1,45 @@
+.form--login {
+    width: 100%;
+    border-radius: 0.2rem;
+    max-width: 25rem;
+    text-align: center;
+}
+
+
+.form--login h1 {
+    margin: 1rem auto;
+    margin-bottom: 2rem;
+    width: 90%;
+    letter-spacing: -1.5px;
+    font-weight: 700;
+} 
+
+
+.ggl {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.form--login p {
+    width: 90%;
+    margin: 0 auto;
+    margin-bottom: 1rem;
+    font-size: .8rem;
+}
+
+.commom--text {
+    text-align: center;
+    color: #b5b5b5;
+    /* color: #3f3d56; */
+}
+
+.toSignUp {
+    font-weight: 600;
+    color: royalblue;
+    text-decoration: none;
+}
+
+.toSignUp:hover {
+    text-decoration: underline;
+}

@@ -1,0 +1,26 @@
+.btn--submit {
+    display: flex;
+    justify-content: center;
+    width: 90%;
+    /* max-height: 44px; */
+    margin: 2rem auto;
+    /* margin-top: 2rem; */
+    padding: .8rem;
+    background-color: white;
+    border: 1px solid #ccc;
+    /* text-transform: uppercase; */
+    /* letter-spacing: 1px; */
+    text-align: center;
+    font-weight: 600;
+    transition: .15s ease-in-out;
+    cursor: pointer;
+}
+
+.btn--submit:hover , .btn--submit:focus {
+    /* background-color: #37679c; */
+    background-color: rgb(20, 17, 17);
+    border-color: white;
+
+    color: #FAFAF9;
+}
+

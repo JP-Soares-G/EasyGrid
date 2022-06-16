@@ -1,0 +1,38 @@
+.form--signup {
+    width: 100%;
+    border-radius: 0.2rem;
+    max-width: 25rem;
+    text-align: center;
+}
+
+.form--signup h1 {
+    margin: 2rem auto;
+    width: 90%;
+    letter-spacing: -1.5px;
+    font-weight: 700;
+}
+
+.form--signup .group {
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+    margin-bottom: 1rem;
+}
+
+
+.form--signup p {
+    /* background-color: royalblue; */
+    width: 90%;
+    margin: 2rem auto;
+    font-size: .8rem;
+}
+
+.toLogin {
+    font-weight: 600;
+    color: royalblue;
+    text-decoration: none;
+}
+
+.toLogin:hover {
+    text-decoration: underline;
+}
