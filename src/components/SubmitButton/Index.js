@@ -5,7 +5,7 @@ import {ThreeDots} from "react-loader-spinner"
 function SubmitButton(props) {
     // const {isPending} = useSelector((state) => state.auth)
     return (
-        <button className="btn--submit" type="submit">
+        <button {...props} className="btn--submit" type="submit">
             { !props.pending
                 ? props.title
                 : <ThreeDots color="royalblue" height={14.5} width={40} />

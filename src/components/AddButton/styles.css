@@ -1,0 +1,16 @@
+.btn--add {
+    border: 1px solid #4361EE;
+    color: #4361EE;
+    font-weight: 500;
+    padding: .7em 1em;
+    border-radius: 6px;
+    background-color: white;
+    cursor: pointer;
+    transition: .2s ease;
+}
+
+.btn--add:hover, .btn--add:focus {
+    border: 1px solid #ffff;
+    color: #fff;
+    background-color: #4361EE;
+}

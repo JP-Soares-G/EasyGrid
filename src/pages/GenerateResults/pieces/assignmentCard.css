@@ -1,0 +1,26 @@
+.assignment__container {
+    padding: 8px;
+    /* border-left: 1px solid greenyellow; */
+    box-sizing: border-box;
+    /* width: 250px; */
+}
+
+.assignment__professor {
+    color: orange;
+    /* white-space: nowrap; */
+    /* overflow: hidden; */
+    text-transform: capitalize;
+    /* text-overflow: ellipsis; */
+    /* width: 250px; */
+}
+
+.assigment__discipline {
+    color: grey;
+    font-size: 14px;
+    /* white-space: nowrap; */
+    /* overflow: hidden; */
+    text-transform: capitalize;
+    /* text-overflow: ellipsis; */
+}
+
+

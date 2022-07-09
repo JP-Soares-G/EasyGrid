@@ -1,0 +1,102 @@
+.professors-page {
+    /* padding: 0 16px; */
+    flex-grow: 1;
+}
+
+.professors__header{
+    width: 100%;
+    padding-right: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.professors__title {
+    margin: 0;
+    color: #011B0B;
+    padding-left: 16px;
+}
+
+.professors-page .tableWrapper {
+    box-sizing: border-box;
+    overflow-x: auto;
+    padding: 0 16px;
+    width: 100vw;
+}
+
+.professors-page .table {
+    box-sizing: border-box;
+    margin-top: 40px;
+    margin-bottom: 40px;
+
+    display: inline-block;
+    text-align: left;
+    border: 2px solid #e8edf0;
+    border-radius: 20px;
+    min-height: 400px;
+    
+    /* padding: 0 16px; */
+}
+
+.professors-page .table .row {
+    /* height: 20px; */
+    display: flex;
+    align-items: center;
+    padding: 4px 16px;
+    border-bottom: 2px solid #e8edf0;
+    text-transform: capitalize;
+    color: #74857C;
+}
+
+.professors-page .table .row-header {
+    /* border: 0; */
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+    padding: 8px 16px;
+    background-color: #e8edf0;
+    /* color: #74857C; */
+}
+
+.professors-page .table  .row-header p:last-child{
+    margin-left: auto;
+}
+
+.professors-page .table .name-col {
+    color: #011B0B;
+}
+
+.professors-page .table .col{
+    min-width: 200px;
+}
+
+
+
+.professors-page .table .col2, .professors-page .action-col {
+    width: 300px;
+}
+
+.professors-page .action-col{
+    margin: 0 0 0 auto;
+    display: flex;
+    gap: 8px;
+}
+
+@media (min-width: 750px) {
+    .professors-page {
+        padding: 0 16px;
+    }
+
+    .professors-page .professors__title {
+        padding: 0;
+    }
+
+    .professors-page .tableWrapper {
+        width: 100%;
+        padding: 0;
+    }
+
+    .professors-page .table {
+        display: block;
+    } 
+}

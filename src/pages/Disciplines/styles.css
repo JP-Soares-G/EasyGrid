@@ -1,0 +1,105 @@
+.disciplines-page {
+    /* padding: 0 16px; */
+    flex-grow: 1;
+}
+
+.disciplines__header{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 16px;
+    box-sizing: border-box;
+}
+
+
+.disciplines__title {
+    margin: 0;
+    padding-left: 16px;
+    color: #011B0B;
+}
+
+.disciplines-page .tableWrapper {
+    box-sizing: border-box;
+    overflow-x: auto;
+    padding: 0 16px;
+    width: 100vw;
+
+}
+
+.disciplines-page .table {
+    box-sizing: border-box;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    /* width: 100%; */
+    display: inline-block;
+    text-align: left;
+    border: 2px solid #e8edf0;
+    border-radius: 20px;
+    min-height: 400px;
+    
+    /* padding: 0 16px; */
+}
+
+.disciplines-page .table .row {
+    /* height: 20px; */
+    display: flex;
+    align-items: center;
+    padding: 4px 16px;
+    border-bottom: 2px solid #e8edf0;
+    text-transform: capitalize;
+    color: #74857C;
+}
+
+.disciplines-page .table  .row-header {
+    /* border: 0; */
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+    padding: 8px 16px;
+    background-color: #e8edf0;
+    /* color: #74857C; */
+}
+
+.disciplines-page .table  .row-header p:last-child{
+    margin-left: auto;
+}
+
+.disciplines-page .table .name-col {
+    color: #011B0B;
+}
+
+.disciplines-page .table .col{
+    min-width: 200px;
+}
+
+.disciplines-page .table .col1{
+    min-width: 350px;
+}
+
+.disciplines-page .table .col3, .disciplines-page .action-col {
+    width: 200px;
+}
+.disciplines-page .action-col{
+    margin: 0 0 0 auto;
+    display: flex;
+    gap: 8px;
+} 
+
+@media (min-width: 860px) {
+    .disciplines-page {
+        padding: 0 16px;
+    }
+
+    .disciplines-page .disciplines__title {
+        padding: 0;
+    }
+
+    .disciplines-page .tableWrapper {
+        width: 100%;
+        padding: 0;
+    }
+
+    .disciplines-page .table {
+        display: block;
+    } 
+}

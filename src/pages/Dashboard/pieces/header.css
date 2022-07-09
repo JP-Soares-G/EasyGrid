@@ -7,11 +7,14 @@ header {
     align-items: center;
     
 }
+ 
+header a {
+    margin-right: auto;
+    text-decoration: none;
+    color: inherit;
+}
 
 .logo {
-    /* padding: 16px; */
-    margin: 0;
-    margin-right: auto;
     font-size: 1.4rem;
 }
 

@@ -1,15 +1,28 @@
 import './App.css';
-import Dashboard from './pages/Dashboard/Index';
-import Login from './pages/Login/Index'
-import Signup from './pages/Signup/Index';
+import Routes from './Routes';
+import { ToastContainer } from 'react-toastify';
+
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
+  
   return (
-    <div className="App">
-      <Dashboard />
-      <Signup />
-      <Login />
-    </div>
+    <>
+      <Routes />
+      <ToastContainer
+        position="top-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="colored"
+      />
+    </>
+    
   );
 }
 

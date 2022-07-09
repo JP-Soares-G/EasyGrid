@@ -34,12 +34,16 @@
     /* color: #3f3d56; */
 }
 
-.toSignUp {
+.toSignup {
     font-weight: 600;
     color: royalblue;
     text-decoration: none;
 }
 
-.toSignUp:hover {
+.toSignup:hover {
     text-decoration: underline;
+}
+
+.form--login p:last-child {
+    padding-top: 16px;
 }

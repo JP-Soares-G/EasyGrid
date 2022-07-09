@@ -1,0 +1,16 @@
+.daybutton__container {
+    color: grey;
+    background-color: transparent;
+    align-self: center;
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: .1s;
+    /* margin-left: 24px; */
+}
+.daybutton__container.active {
+    padding: .4em 1.5em;
+    border: 1px solid #4361EE;
+    border-radius: 4px;
+    color: #4361EE;
+}

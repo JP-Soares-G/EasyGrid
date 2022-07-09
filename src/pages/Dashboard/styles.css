@@ -1,3 +1,11 @@
 .dashboard-page {
-    height: 100vh;
+    /* height: 100vh; */
+    height: 100%;
+}
+
+.dashboard__wrapper {
+    /* height: 100%; */
+    height: calc(100% - 64px);
+    display: flex;
+    flex-direction: row;
 }
