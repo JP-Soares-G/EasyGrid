@@ -10,9 +10,8 @@
     "axios": "^0.27.2",
     "dotenv": "^16.0.1",
     "hamburger-react": "^2.5.0",
-    "react": "^18.1.0",
-    "react-dom": "^18.1.0",
-    "react-google-login": "^5.2.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "react-icons": "^4.4.0",
     "react-loader-spinner": "^5.1.5",
     "react-redux": "^8.0.2",
@@ -24,10 +23,11 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "react-scripts start --force",
+    "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "heroku-postbuild": "npm i react-google-login --force"
   },
   "eslintConfig": {
     "extends": [
@@ -50,9 +50,8 @@
   "devDependencies": {
     "@redux-devtools/core": "^3.13.1"
   },
-  "engines": { 
-    "npm" : "^8.6.0",
-    "node" : "^17.7.1"
+  "engines": {
+    "npm": "^8.6.0",
+    "node": "^17.7.1"
   }
-
 }
