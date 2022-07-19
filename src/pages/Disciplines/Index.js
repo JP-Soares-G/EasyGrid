@@ -74,7 +74,7 @@ function Disciplines() {
                     
                     {data.map(item => {
                         return (
-                            <div className="row">
+                            <div key={item.id.toString()} className="row">
                                 <p className="col col0">{item.codigo}</p>
                                 <p className="col col1 name-col">{item.nome}</p>
                                 <p className="col col2">{item.cargaHoraria}H</p>

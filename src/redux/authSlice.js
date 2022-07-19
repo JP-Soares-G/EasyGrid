@@ -8,19 +8,29 @@ const initialState = {
     user: authService.isAuthenticated() || null
 }
 
+const authValidation = ({email, senha}) => {
+    if(email !== undefined && email.trim() === '') {
+        return "Email não pode ser vazio!"
+    }
+    if(senha.trim() === '') {
+        return "Senha não pode ser vazia!"
+    }
 
+    return ""
+}
 
 export const login = createAsyncThunk(
     'auth/login',
     async ({username, password}, thunkAPI) => {
         
+        const params = {email: username, senha: password}
         try {
-            const params = {email: username, senha: password}
             const data = await authService.login(params)
             
             return {user: data}
         } catch (err) {
-            return thunkAPI.rejectWithValue(err)
+            let errMessage = authValidation(params)
+            return thunkAPI.rejectWithValue({err: errMessage})
         }
     }
 )
@@ -45,7 +55,9 @@ export const authSlice = createSlice({
             toastLoading = toast.loading("Aguarde...")
         },
         [login.rejected]: (state, {payload}) => {
-            toast.update(toastLoading, {render: "Verifique os dados inseridos", type: "error", isLoading: false, autoClose: 5000});
+            const defaultMsg = "Algo inesperado aconteceu. Tente novamente mais tarde."
+            const errMessage = (payload.err !== "" ? payload.err : defaultMsg)
+            toast.update(toastLoading, {render: errMessage, type: "error", isLoading: false, autoClose: 5000});
         },
         [logout.fulfilled]: (state) => {
             state.user = null

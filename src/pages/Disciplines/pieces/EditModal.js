@@ -18,7 +18,7 @@ function EditModal(props) {
         let id = toast.loading("Aguarde...")
         const url = `/disciplinas/${props.item.id}`
         const params = {nome, codigo, cargaHoraria}
-        axios.put(url, params)
+        axios.put(`/disciplinas/${props.item.id}`, params)
             .then(res => {
                 props.updateList()
                 toast.update(id, {render: "Atualizado", type: "success", isLoading: false, autoClose: 3000})
@@ -27,7 +27,10 @@ function EditModal(props) {
                 setCodigo("")
                 setNome("")
             })
-            .catch(err => toast.update(id, {render: "Algo deu errado", type: "error", isLoading: false, autoClose: 3000}))
+            .catch(err => {
+                console.log(err.response.data)
+                toast.update(id, {render: "Algo deu errado", type: "error", isLoading: false, autoClose: 3000})
+            })
     }
 
     return (

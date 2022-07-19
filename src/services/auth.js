@@ -2,9 +2,9 @@ import axios from 'axios'
 
 const TOKEN_KEY = 'user'
 
-const instance = axios.create({
-    baseURL: 'https://projetopsr.herokuapp.com'
-});
+// const instance = axios.create({
+//     baseURL: 'https://projetopsr.herokuapp.com'
+// });
 
 function login({email, senha}) {
     const params = {
@@ -12,9 +12,10 @@ function login({email, senha}) {
         senha
     }
 
-    return instance.post("/login", params).then(res => {
-
+    return axios.post("/login", params).then(res => {
+        // console.log(res.status)
         if(res.status === 200) {
+            
             localStorage.setItem(TOKEN_KEY, JSON.stringify(params))
         }
 

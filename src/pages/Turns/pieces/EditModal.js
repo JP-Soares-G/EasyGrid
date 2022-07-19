@@ -28,7 +28,10 @@ function EditModal(props) {
                 setHoraInicio(0)
                 setHoraTermino(0)
             })
-            .catch(err => toast.update(id, {render: "Algo deu errado", type: "error", isLoading: false, autoClose: 3000}))
+            .catch(err => {
+                console.log(err.response.data)
+                toast.update(id, {render: "Algo deu errado", type: "error", isLoading: false, autoClose: 3000})
+            })
     }
     return (
         <div className={"editModal__container" + (!props.showEditModal ? " hide" : "")}>

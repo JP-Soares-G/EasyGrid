@@ -70,7 +70,7 @@ function Turns() {
                     </div>
                     {data.map((item, index) => {
                         return (
-                            <div key={index} className="row">
+                            <div key={item.id.toString()} className="row">
                                 <p className="col col1 name-col">{item.nome}</p>
                                 <p className="col col2">{item.horaInicio}H</p>
                                 <p className="col col3">{item.horaTermino}H</p>
