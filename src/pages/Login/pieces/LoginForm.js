@@ -9,8 +9,8 @@ import { login } from '../../../redux/authSlice'
 import './loginForm.css'
 
 function LoginForm() {
-    const [username, setUsername] = useState("12345@teste.com")
-    const [password, setPassword] = useState("12345")
+    const [username, setUsername] = useState("lizard@example.com")
+    const [password, setPassword] = useState("lizard123")
 
     const dispatch = useDispatch()
     

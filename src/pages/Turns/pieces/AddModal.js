@@ -1,12 +1,24 @@
 import React from 'react'
 import { toast } from 'react-toastify';
 import axios from 'axios'
+import Select from 'react-select'
+
 import './addModal.css'
 
 function AddModal(props) {
     const [nome, setNome] = React.useState("")
     const [horaInicio, setHoraInicio] = React.useState(0)
     const [horaTermino, setHoraTermino] = React.useState(0)
+
+    const daysOptions = [
+        { value: 'segunda', label: 'Segunda' },
+        { value: 'terça', label: 'Terça' },
+        { value: 'quarta', label: 'Quarta' },
+        { value: 'quinta', label: 'Quinta' },
+        { value: 'sexta', label: 'Sexta' },
+        { value: 'sabado', label: 'Sabado' },
+        { value: 'domingo', label: 'Domingo' }
+    ]
 
     const createTurn = () => {
         
@@ -46,14 +58,21 @@ function AddModal(props) {
                         className="addModal__input hi" 
                         type="number" />
                 </div>
-                <div className="input-wrapper input-wrapper--ht">
-                    Hora de Término 
-                    <input 
-                        max={24}
-                        value={horaTermino} 
-                        onChange={(event) => setHoraTermino(event.target.value.replace(/\D/,''))} 
-                        className="addModal__input ht" 
-                        type="number" />
+                <div className="input-wrapper input-wrapper--apd">
+                    Aulas por Dia <input 
+                                        value={1}
+                                        max={24}
+                                        className="editModal__input apd" 
+                                        type="number" />
+                </div>
+                <div className="input-wrapper input-wrapper--dda">
+                    Duração da Aula <input 
+                                        value={1}
+                                        className="editModal__input dda" 
+                                        type="number" />
+                </div>
+                <div className="input-wrapper input-wrapper--dds">
+                    Dias da Semana <Select isSearchable={false} isMulti={true} options={daysOptions} />
                 </div>
 
                 <button onClick={createTurn} className="addModal__btn">Adicionar Turno</button>

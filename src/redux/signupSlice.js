@@ -4,22 +4,40 @@ import signupService from '../services/signup'
 
 let toastLoading = null
 
+const signupValidation = ({email, senha, nome}) => {
+    if(nome.trim() === '') {
+        return "Nome não pode ser vazio!"
+    }
+    if(email !== undefined && email.trim() === '') {
+        return "Email não pode ser vazio!"
+    }
+    if(senha.trim() === '') {
+        return "Senha não pode ser vazia!"
+    }
+    
+
+    return ""
+}
+
 export const signup = createAsyncThunk(
     "signup/signup",
     async ({username, email, password}, thunkAPI) => {
+        const params = {
+            nome: username,
+            email: email,
+            senha: password
+        }
         try {
-            const params = {
-                nome: username,
-                email: email,
-                senha: password
-            }
             
             const data = await signupService.signup(params)
             
             return {data: data}
 
         } catch(err) {
-            return thunkAPI.rejectWithValue(err)
+            let errMessage = signupValidation(params)
+            if(errMessage === "") errMessage = err.response.data
+
+            return thunkAPI.rejectWithValue({err: errMessage})
         }
     }
 )
@@ -36,7 +54,9 @@ export const signupSlice = createSlice({
             toastLoading = toast.loading("Aguarde...")
         },
         [signup.rejected]: (state, {payload}) => {
-            toast.update(toastLoading, {render: "Verifique os dados inseridos", type: "error", isLoading: false, autoClose: 5000});
+            const defaultMsg = "Algo inesperado aconteceu. Tente novamente mais tarde."
+            const errMessage = (payload.err !== "" ? payload.err : defaultMsg)
+            toast.update(toastLoading, {render: errMessage, type: "error", isLoading: false, autoClose: 5000});
         }
     }
 })

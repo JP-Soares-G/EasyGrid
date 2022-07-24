@@ -64,11 +64,15 @@
     gap: 2.125rem
 }
 
+.turns-page .addModal__container .input-wrapper--apd {
+    gap: 2.125rem;
+}
+
 .turns-page .addModal__container .input-wrapper .hi {
     max-width: 80px;
 }
 
-.turns-page .addModal__container .input-wrapper .ht {
+.turns-page .addModal__container .input-wrapper .apd, .turns-page .addModal__container .input-wrapper .dda {
     max-width: 80px;
 }
 

@@ -9,6 +9,8 @@ import EditModal from './pieces/EditModal'
 import './styles.css'
 
 
+
+
 function Turns() {
     const [showEditModal, setShowEditModal] = React.useState(false)
     const [showAddModal, setShowAddModal] = React.useState(false)
@@ -65,7 +67,9 @@ function Turns() {
                     <div className="row row-header">
                         <p className="col col1">Nome</p>
                         <p className="col col2">Inicio</p>
-                        <p className="col col3">Termino</p>
+                        <p className="col col--qtd col3">Quantidade</p>
+                        <p className="col col--dur col3">Duração</p>
+                        <p className="col col3">Dias</p>
                         <p className="col col4">Ações</p>
                     </div>
                     {data.map((item, index) => {
@@ -73,7 +77,16 @@ function Turns() {
                             <div key={item.id.toString()} className="row">
                                 <p className="col col1 name-col">{item.nome}</p>
                                 <p className="col col2">{item.horaInicio}H</p>
-                                <p className="col col3">{item.horaTermino}H</p>
+                                <p className="col col--qtd-value">{item.qtdAulasDia}</p>
+                                <p className="col col--dur-value">{item.duracaoAula}</p>
+                                <p className="col col--days-value">
+                                    {item.diasDaSemana?.map((e,index) => {
+                                        const size = item.diasDaSemana.length
+                                         
+                                        if(size - 1 === index) return (e + "").toLocaleLowerCase()
+                                        return (e + ", ").toLocaleLowerCase()
+                                    })} 
+                                </p>
                                 <div className="col col4 action-col">
                                     <EditButton onClick={() => edit(item)} /> 
                                     <DeleteButton onClick={() => deleteTurn(item.id)} />

@@ -60,14 +60,17 @@
 
 .turns-page .editModal__container .input-wrapper--hi {
     gap: 2.125rem;
-    
+}
+
+.turns-page .editModal__container .input-wrapper--apd {
+    gap: 2.125rem;
 }
 
 .turns-page .editModal__container .input-wrapper .hi {
-    max-width: 80px;
+    max-width: 100px;
 }
 
-.turns-page .editModal__container .input-wrapper .ht {
+.turns-page .editModal__container .input-wrapper .apd, .turns-page .editModal__container .input-wrapper .dda {
     max-width: 80px;
 }
 
