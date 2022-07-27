@@ -32,15 +32,18 @@ function EditModal(props) {
         setAulasDia(props.item.qtdAulasDia)
         setDuracaoAula(props.item.duracaoAula)
         setSelectedDays([...days])
-
+ 
     }, [props.item])
 
     // console.log(parseInt(item.horaInicio))
     const updateTurn = () => {
         let id = toast.loading("Aguarde...")
+        
         const url = `/turnos/${props.item.id}`
+
         const daysUpperCase = selectedDays.map(e => e.toUpperCase())
         const params = {nome, horaInicio, qtdAulasDia: aulasDia, duracaoAula, diasDaSemana: daysUpperCase}
+        
         axios.put(url, params)
             .then(res => {
                 props.updateList()
@@ -50,7 +53,7 @@ function EditModal(props) {
                 setHoraInicio(0)
             })
             .catch(err => {
-                console.log(err.response.data)
+                // console.log(err.response.data)
                 toast.update(id, {render: "Algo deu errado", type: "error", isLoading: false, autoClose: 3000})
             })
     }
@@ -72,7 +75,7 @@ function EditModal(props) {
                 </div>
                 <div className="input-wrapper input-wrapper--hi">
                     Hora de Inicio <input 
-                                        required
+                                        
                                         value={horaInicio} 
                                         onChange={(event) => setHoraInicio(event.target.value)} 
                                         className="editModal__input hi" 

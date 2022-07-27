@@ -22,30 +22,49 @@ function Turns() {
     const toggleAddModal = () => setShowAddModal(!showAddModal)
     const updateList = () => setIsToUpdate(!isToUpdate)
 
+    
 
     const deleteTurn = (id) => {
+        let idToast = toast.loading("Aguarde...")
+
         const url = `/turnos/${id}`
         axios.delete(url, { withCredentials: false })
-            .then(() => updateList())
+            .then(() => {
+                toast.update(idToast, {render: "Removido", type: "success", isLoading: false, autoClose: 500})
+                updateList()
+            })
             .catch(err => {
-                alert("Algo deu errado")
+                toast.update(idToast, {render: "Algo deu errado... Tente novamente mais tarde", type: "error", isLoading: false, autoClose: 500})
+                // alert("Algo deu errado... Tente novamente mais tarde")
             })
     }
 
 
     React.useEffect(() => {
-        // alert(process.env.REACT_APP_API_URL)
-        // axios.get(`${process.env.REACT_APP_API_URL}/turnos`)
-        // const url = `${process.env.REACT_APP_API_URL}/turnos`
+        let id = toast.loading("Aguarde...")
+
         axios.get("/turnos")
-        .then(res => setData(res.data.content))
-        .catch(err => toast.warn("Algo deu errado kk"))
+        .then(res => {
+            setData(res.data.content)
+            toast.update(id, {isLoading: false, autoClose: 100})
+        })
+        .catch(err => {
+            const conf = { 
+                render: "Algo deu errado... Tente novamente mais tarde", 
+                type: "error",
+                isLoading: false,
+                autoClose: 3000, 
+            }
+            toast.update(id, conf)
+        })
     }, [])
     
     React.useEffect(() => {
         axios.get("/turnos")
-        .then(res => setData(res.data.content))
-        .catch(err => alert("Algo deu errado"))
+        .then(res => {
+            setData(res.data.content)
+        })
+        .catch(err => toast.error("Algo deu errado... Tente novamente mais tarde"))
     }, [isToUpdate])
 
     // React.useEffect(() => {
