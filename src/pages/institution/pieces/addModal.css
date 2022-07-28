@@ -1,0 +1,102 @@
+.institution-page .addModal__container {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.253);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.institution-page .addModal__box {
+    
+    display: inline-block;
+    background-color: #fff;
+    padding: 24px;
+    border-radius: 8px;
+}
+
+.institution-page .addModal__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 32px;
+}
+
+.institution-page .addModal__header .close {
+    background-color: transparent;
+    border: none;
+    font-weight: 500;
+    border-radius: 2px;
+    padding: 4px 8px;
+    cursor: pointer;
+}
+
+.institution-page .addModal__header .close:hover, .institution-page .addModal__header .close:focus {
+    background-color: rgba(0, 0, 0, 0.37);
+}
+
+.institution-page .addModal__container .input-wrapper {
+    display: flex;
+    
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 16px;
+    font-weight: 400;
+    font-size: 14px;
+}
+
+
+
+.institution-page .addModal__input {
+    padding: .725em 1em;
+    border-radius: 8px;
+    border: 1px solid #8B8C89;
+}
+
+.institution-page .addModal__container .input-wrapper--name {
+    gap: 2.5rem;
+}
+
+.institution-page .addModal__container .input-wrapper--sigla {
+    gap: 3.125rem;
+    
+}
+.institution-page .addModal__container .input-wrapper--cnpj {
+    gap: 2.825rem;
+    
+}
+.institution-page .addModal__btn {
+    padding: .725em 2em;
+    background-color: black;
+    color: white;
+    border: 1px solid black;
+    border-radius: 5px;
+    margin-top: 8px;
+    cursor: pointer;
+}
+
+.institution-page .hide {
+    display: none;
+}
+
+@media (max-width: 1024px) {
+    .institution-page .addModal__container .input-wrapper{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+        margin-bottom: 16px;
+        
+    }
+
+    .institution-page .addModal__btn{
+        margin-top: 16px;
+    }
+
+    .institution-page .addModal__input {
+        width: 220px;
+    }
+}

@@ -12,6 +12,7 @@ import Signup from './pages/Signup/Index';
 import Turns from './pages/Turns/Index';
 import {useSelector} from 'react-redux'
 import PrivateRoute from './components/PrivateRoute/Index';
+import Institution from './pages/institution/Index';
 
 function Routes() {
     const {user} = useSelector(state => state.auth)
@@ -32,6 +33,7 @@ function Routes() {
                         <Route path="disciplines" element={<Disciplines />} />
                         <Route path="professors" element={<Professors />} />
                         <Route path="turns" element={<Turns />} />
+                        <Route path="institution" element={<Institution />} />
                         <Route path="*"
                             element={
                                 <main style={{ padding: "1rem" }}>

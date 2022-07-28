@@ -1,0 +1,104 @@
+.institution-page {
+    /* padding: 0 16px; */
+    box-sizing: border-box;
+    flex-grow: 1;
+}
+
+.institution__header {
+    display: flex;
+    justify-content: space-between;
+    padding-right: 8px;
+}
+
+.institution__title {
+    margin: 0;
+    padding: 0 16px;
+}
+
+.institution-page .tableWrapper {
+    box-sizing: border-box;
+    overflow-x: auto;
+    padding: 0 16px;
+    width: 100vw;
+
+}
+
+
+.institution-page .table {
+    box-sizing: border-box;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    display: inline-block;
+    
+    text-align: left;
+    border: 2px solid #e8edf0;
+    /* border: 2px solid #d8d8d8; */
+    border-radius: 20px;
+    min-height: 400px;
+}
+
+
+
+.institution-page .table .row {
+    /* height: 20px; */
+    display: flex;
+    align-items: center;
+    padding: 4px 16px;
+    border-bottom: 2px solid #e8edf0;
+    text-transform: capitalize;
+}
+
+.institution-page .table  .row-header {
+    /* border: 0; */
+
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+    padding: 8px 16px;
+    background-color: #e8edf0;
+    color: #74857C;
+}
+
+
+.institution-page .table .col{
+    min-width: 200px;
+    color: #74857C;
+}
+
+.institution-page .table  .row-header p:last-child{
+    margin-left: auto;
+
+}
+
+.institution-page .action-col{
+    margin: 0 0 0 auto;
+    display: flex;
+    gap: 8px;
+}
+
+.institution-page .table .sigla-col {
+    min-width: 100px;
+}
+
+.institution-page .table .name-col {
+    color: black;
+}
+
+
+@media (min-width: 870px) {
+    .institution-page {
+        padding: 0 16px;
+    }
+
+    .institution-page .institution__title {
+        padding: 0;
+    }
+
+    .institution-page .tableWrapper {
+        width: 100%;
+        padding: 0;
+    }
+
+    .institution-page .table {
+        display: block;
+    } 
+}

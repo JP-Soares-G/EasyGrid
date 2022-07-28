@@ -31,6 +31,7 @@ function SideBarMobile(props) {
             </div>
             <div className="nav">
                 <NavLink exact={true} activeClassName="selected" to="/dashboard/results" >Resultados</NavLink>
+                <NavLink activeClassName="selected" to="/dashboard/institution">Instituições</NavLink>
                 <NavLink activeClassName="selected" to="/dashboard/disciplines">Disciplinas</NavLink>
                 <NavLink activeClassName="selected" to="/dashboard/professors">Professores</NavLink>
                 <NavLink activeClassName="selected" to="/dashboard/turns" >Turnos</NavLink>
