@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import Header from './pieces/Header'
 import Select from 'react-select'
 
@@ -37,10 +37,11 @@ const options = [
 
 function Preference() {
     
-    const [turn, setTurn] = React.useState({})
-    const [hours, setHours] = React.useState([...hoursArr])
+    const [turn, setTurn] = useState({})
+    const [hours, setHours] = useState([...hoursArr])
+    const [search, setSearch] = useState("")
 
-    React.useEffect(() => {
+    useEffect(() => {
         let temp = []
         for(let i = turn.inicio; i < turn.termino; i++){
             temp.push(i)
@@ -132,10 +133,13 @@ function Preference() {
                 <div className="preference__disciplines">
                     <p>Disciplinas</p>
                     <div className="preference__disciplines__content">
-                        <input className="disciplines__search" placeholder="Pesquisar" type="text" />
+                        <div className="preference__disciplines__options">
+                            <input value={search} onChange={e => setSearch(e.target.value)} className="disciplines__search" placeholder="Pesquisar" type="text" />
+                            <div>Filtrar selecionados <input type="checkbox" /></div>
+                        </div>
 
                         <div className="box">
-                            {disciplines.map(d => {
+                            {disciplines.filter(item => item.toLowerCase().includes(search.toLowerCase())).map(d => {
                                 return (
                                     <label className="discipline__label">
                                         {d}

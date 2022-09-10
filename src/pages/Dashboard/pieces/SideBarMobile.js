@@ -31,11 +31,12 @@ function SideBarMobile(props) {
             </div>
             <div className="nav">
                 <NavLink exact={true} activeClassName="selected" to="/dashboard/results" >Resultados</NavLink>
-                <NavLink activeClassName="selected" to="/dashboard/institution">Instituições</NavLink>
-                <NavLink activeClassName="selected" to="/dashboard/disciplines">Disciplinas</NavLink>
-                <NavLink activeClassName="selected" to="/dashboard/professors">Professores</NavLink>
-                <NavLink activeClassName="selected" to="/dashboard/turns" >Turnos</NavLink>
-                <NavLink activeClassName="selected" to="/dashboard/generateresults" >Gerar Resultados</NavLink>
+                <NavLink onClick={() => setOpen(!isOpen)} activeClassName="selected" to="/dashboard/institution">Instituições</NavLink>
+                <NavLink onClick={() => setOpen(!isOpen)} activeClassName="selected" to="/dashboard/course">Cursos</NavLink>
+                <NavLink onClick={() => setOpen(!isOpen)} activeClassName="selected" to="/dashboard/disciplines">Disciplinas</NavLink>
+                <NavLink onClick={() => setOpen(!isOpen)} activeClassName="selected" to="/dashboard/professors">Professores</NavLink>
+                <NavLink onClick={() => setOpen(!isOpen)} activeClassName="selected" to="/dashboard/turns" >Turnos</NavLink>
+                <NavLink onClick={() => setOpen(!isOpen)} activeClassName="selected" to="/dashboard/generateresults" >Gerar Resultados</NavLink>
 
                 <button onClick={submitLogout} className="off--btn">Sair</button>
 

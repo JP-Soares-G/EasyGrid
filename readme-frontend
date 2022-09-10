@@ -1,0 +1,5 @@
+Para executar esse projeto, é necessário ter o npm e o node js instalado sobre as versões 8.6.0 e 17.7.1, respectivamente.
+
+Na pasta raiz do projeto execute o comando `npm init` para que todos os pacotes necessários sejam instalados.
+
+Com todos os pacotes inicializados execute `npm start` para fazer o app funcionar na maquina local. 

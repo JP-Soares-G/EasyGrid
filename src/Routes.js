@@ -13,6 +13,8 @@ import Turns from './pages/Turns/Index';
 import {useSelector} from 'react-redux'
 import PrivateRoute from './components/PrivateRoute/Index';
 import Institution from './pages/institution/Index';
+import Course from './pages/Course/Index';
+import CoursesSubPage from './pages/institution/pieces/CoursesSubPage';
 
 function Routes() {
     const {user} = useSelector(state => state.auth)
@@ -33,7 +35,9 @@ function Routes() {
                         <Route path="disciplines" element={<Disciplines />} />
                         <Route path="professors" element={<Professors />} />
                         <Route path="turns" element={<Turns />} />
-                        <Route path="institution" element={<Institution />} />
+                        <Route  path="institution" element={<Institution />} />
+                        <Route  path="institution/:id" element={<CoursesSubPage />} />
+                        <Route path="course" element={<Course />} />
                         <Route path="*"
                             element={
                                 <main style={{ padding: "1rem" }}>
@@ -49,6 +53,7 @@ function Routes() {
                 {/* <Route exact path="/dashboard/professors/:id" element={<PrivateRoute isAuthenticated={!!user} />}>
                     <Route path="/dashboard/professors/:id" element={<Preference />} />
                 </Route> */}
+                
                 <Route path="/dashboard/professors/:id" element={<Preference />} />
                 <Route path="*"
                     element={

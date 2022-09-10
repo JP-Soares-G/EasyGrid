@@ -1,19 +1,20 @@
-.btn--preferences {
+.btn--courses {
     background-color: #FFD166;
     border: 1px solid #FFD166;
     border-radius: 6px;
     color: white;
-    padding: .5em .4em;
+    padding: .5em .8em;
     font-weight: 500;
-    cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
+
     text-decoration: none;
+    cursor: pointer;
     font-size: 14px;
 }
 
-.btn--preferences:hover, .btn--preferences:focus {
+.btn--courses:hover, .btn--courses:focus {
     background-color: #f8c44c;
 }

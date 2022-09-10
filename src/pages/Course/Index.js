@@ -8,10 +8,8 @@ import AddModal from './pieces/AddModal'
 import EditModal from './pieces/EditModal'
 
 import './styles.css'
-import CoursesButton from './pieces/CoursesButton';
 
-function Institution() {
-
+function Course() {
     const [showEditModal, setShowEditModal] = React.useState(false)
     const [showAddModal, setShowAddModal] = React.useState(false)
     const [isToUpdate, setIsToUpdate] = React.useState(false) 
@@ -46,7 +44,7 @@ function Institution() {
     React.useEffect(() => {
         let id = toast.loading("Aguarde...")
 
-        axios.get("/instituicoes?direction=ASC&linesPerPage=50&orderBy=nome")
+        axios.get("/cursos?direction=ASC&linesPerPage=50&orderBy=nome")
         .then(res => {
             setData(res.data.content)
             toast.update(id, {isLoading: false, autoClose: 100})
@@ -63,37 +61,37 @@ function Institution() {
     }, [])
 
     React.useEffect(() => {
-        axios.get("/instituicoes?direction=ASC&linesPerPage=50&orderBy=nome")
+        axios.get("/cursos?direction=ASC&linesPerPage=50&orderBy=nome")
         .then(res => {
             setData(res.data.content)
         })
         .catch(err => toast.error("Algo deu errado... Tente novamente mais tarde"))
     }, [isToUpdate])
 
+
     return (
-        <div className="institution-page">
-            <div className="institution__header">
-                <h2 className="institution__title">Instituições</h2>
-                <AddButton onClick={toggleAddModal} title="Adicionar Instituição" />
+        <div className="course-page">
+            <div className="course__header">
+                <h2 className="course__title">Cursos</h2>
+                <AddButton onClick={toggleAddModal} title="Adicionar Curso" />
             </div>
             <div className="tableWrapper">
                 <div className="table">
                     <div className="row row-header">
-                        <p className="col col0">Nome</p>
                         <p className="col sigla-col">Sigla</p>
-                        <p className="col cnpj-col">CNPJ</p>
-                        <p className="col act-col col2">Ações</p>
+                        <p className="col col0">Nome</p>
+                        <p className="col ">Periodos</p>
+                        <p className="col col2">Ações</p>
                     </div>
                     {data.map(item => {
                         return (
                             <div className="row">
-                                <p className="col name-col col0">{item.nome}</p>
                                 <p className="col sigla-col">{item.sigla}</p>
-                                <p className="col cnpj-col">{item.cnpj}</p>
-                                <div className="col col2 act-col action-col">
-                                    <CoursesButton item={item} />
-                                    <EditButton onClick={() => edit(item)}/> 
-                                    <DeleteButton onClick={() => deleteInstitution(item.id)} />
+                                <p className="col dark-col col0">{item.nome}</p>
+                                <p className="col ">{item.periodo}</p>
+                                <div className="col col2 action-col">
+                                    <EditButton/> 
+                                    <DeleteButton />
                                 </div>
                             </div>
                         )
@@ -106,4 +104,4 @@ function Institution() {
     )
 }
 
-export default Institution
+export default Course

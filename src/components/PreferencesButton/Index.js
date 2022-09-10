@@ -1,11 +1,12 @@
 import React from 'react'
+import {Link} from 'react-router-dom'
 import './styles.css'
 
 function PreferencesButton(props) {
     return (
-        <button {...props} className="btn--preferences">
+        <Link to={`/dashboard/professors/${props.id}`} {...props} className="btn--preferences">
             Preferências
-        </button>
+        </Link>
     )
 }
 

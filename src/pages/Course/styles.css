@@ -1,21 +1,21 @@
-.institution-page {
+.course-page {
     /* padding: 0 16px; */
     box-sizing: border-box;
     flex-grow: 1;
 }
 
-.institution__header {
+.course__header {
     display: flex;
     justify-content: space-between;
-    padding-right: 8px;
+    padding-right: 16px;    
 }
 
-.institution__title {
+.course__title {
     margin: 0;
     padding: 0 16px;
 }
 
-.institution-page .tableWrapper {
+.course-page .tableWrapper {
     box-sizing: border-box;
     overflow-x: auto;
     padding: 0 16px;
@@ -24,7 +24,7 @@
 }
 
 
-.institution-page .table {
+.course-page .table {
     box-sizing: border-box;
     margin-top: 40px;
     margin-bottom: 40px;
@@ -39,7 +39,7 @@
 
 
 
-.institution-page .table .row {
+.course-page .table .row {
     /* height: 20px; */
     display: flex;
     align-items: center;
@@ -48,7 +48,7 @@
     text-transform: capitalize;
 }
 
-.institution-page .table  .row-header {
+.course-page .table  .row-header {
     /* border: 0; */
 
     border-top-left-radius: 16px;
@@ -58,52 +58,47 @@
     color: #74857C;
 }
 
-
-.institution-page .table .col{
+.course-page .table .col{
     min-width: 200px;
     color: #74857C;
 }
 
-.institution-page .table  .row-header p:last-child{
+.course-page .table .col0{
+    min-width: 250px;
+
+}
+.course-page .table .row .dark-col {
+    color: black;
+}
+.course-page .table .sigla-col{
+    min-width: 100px;
+}
+.course-page .table  .row-header p:last-child{
     margin-left: auto;
 
 }
 
-.institution-page .action-col{
-    /* min-width: 250px; */
+.course-page .action-col{
     margin: 0 0 0 auto;
     display: flex;
     gap: 8px;
 }
 
-.institution-page .action-col, .institution-page .table  .row-header p:last-child{
-    min-width: 250px;
-}
-
-.institution-page .table .sigla-col {
-    min-width: 100px;
-}
-
-.institution-page .table .name-col {
-    color: black;
-}
-
-
-@media (min-width: 870px) {
-    .institution-page {
+@media (min-width: 815px) {
+    .course-page {
         padding: 0 16px;
     }
 
-    .institution-page .institution__title {
+    .course-page .course__title {
         padding: 0;
     }
 
-    .institution-page .tableWrapper {
+    .course-page .tableWrapper {
         width: 100%;
         padding: 0;
     }
 
-    .institution-page .table {
+    .course-page .table {
         display: block;
     } 
 }
